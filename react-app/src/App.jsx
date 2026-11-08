@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { LINKS, CATEGORIES, AUDITOR_VENDOR } from "./data/links.js";
-import { COUNTY } from "./config/county.js";
+import { COUNTY, SEARCH_PLACEHOLDER, VENDOR_LABEL } from "./config/county.js";
 import { useCountyApps } from "./data/countyApps.js";
 import MainMenu from "./components/MainMenu.jsx";
 import CountyApps from "./components/CountyApps.jsx";
@@ -71,14 +71,14 @@ export default function App() {
           />
           <h1>{COUNTY.name} County Information</h1>
         </div>
-        <p>A curated directory of government, education, health, business, community, and news links across Delaware County, Ohio.</p>
+        <p>A curated directory of government, education, health, business, community, and news links across {COUNTY.name} County, Ohio.</p>
         <p style={{ margin: "0 0 16px", fontSize: "0.9rem", opacity: 0.9 }}>
-          <strong>Auditor Data Vendor:</strong> {AUDITOR_VENDOR}
+          <strong>{VENDOR_LABEL}:</strong> {AUDITOR_VENDOR}
         </p>
         <input
           className="search"
           type="search"
-          placeholder="Search links, e.g. library, chamber, elections…"
+          placeholder={SEARCH_PLACEHOLDER}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search links"

@@ -1,6 +1,8 @@
 // Which county this Information app is for. The only per-county settings in
 // the app besides src/data/links.js — everything else (menu, county-apps
-// strip, feed reader) is shared across all the *CountyInformation apps.
+// strip, feed reader, link tree) is shared across all the *CountyInformation
+// apps and swept from DelawareCountyInformation by
+// Statehouse/scripts/sweep-county-information.py.
 export const COUNTY = {
   name: "Delaware",
   /** Slug used by the OhioCounties hub and its county-apps.json ("van-wert"). */
@@ -8,6 +10,11 @@ export const COUNTY = {
   /** This app's GitHub repository name. */
   repo: "DelawareCountyInformation",
 };
+
+/** Hero line label for the auditor's data vendor (Cuyahoga has a Fiscal Officer). */
+export const VENDOR_LABEL = "Auditor Data Vendor";
+/** Search box hint. */
+export const SEARCH_PLACEHOLDER = "Search links, e.g. library, chamber, elections…";
 
 const GH = "https://mikecostarella.github.io";
 
@@ -24,9 +31,9 @@ export const GITHUB_ACTIONS_URL = `${GITHUB_REPO_URL}/actions`;
  * The live feed wins when it differs. Snapshot: 2026-11-08.
  */
 export const FALLBACK_APPS = [
-  { label: "Elections", kind: "Elections", href: `${GH}/OhioElections/#/delaware` },
-  { label: "Information", kind: "Information", href: `${GH}/DelawareCountyInformation/` },
-  { label: "Liquor Permits", kind: "Liquor Permits", href: `${GH}/OhioLiquorPermits/#/county/delaware` },
-  { label: "Parcels Map", kind: "Parcels", href: `${GH}/DelawareCountyParcels/` },
-  { label: "Voters", kind: "Voters", href: `${GH}/DelawareCountyVoters/` },
+  { label: "Elections", kind: "Elections", href: "https://mikecostarella.github.io/OhioElections/#/delaware" },
+  { label: "Information", kind: "Information", href: "https://mikecostarella.github.io/DelawareCountyInformation/" },
+  { label: "Liquor Permits", kind: "Liquor Permits", href: "https://mikecostarella.github.io/OhioLiquorPermits/#/county/delaware" },
+  { label: "Parcels Map", kind: "Parcels", href: "https://mikecostarella.github.io/DelawareCountyParcels/" },
+  { label: "Voters", kind: "Voters", href: "https://mikecostarella.github.io/DelawareCountyVoters/" }
 ];
